@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import MessageList from './components/MessageList/MessageList';
+import MessageInputForm from './components/MessageInputForm/MessageInputForm';
 
 function App() {
+  // state for message input
+  const [messageInput, setMessageInput] = useState('');
+
+  // for debug
+  const [messages, setMessages] = useState([]);
+
+  // get text input from user
+  const handleChange = (e) => {
+    e.preventDefault();
+    setMessageInput(e.target.value);
+    console.log(e.target.value)
+  }
+
+  // show message to user
+  const handleClick = (e) => {
+    e.preventDefault();
+    setMessages([...messages, messageInput]);
+    console.log(messages)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MessageList messages={messages}/>
+      <MessageInputForm handleClick={handleClick} handleChange={handleChange}/>
     </div>
   );
 }

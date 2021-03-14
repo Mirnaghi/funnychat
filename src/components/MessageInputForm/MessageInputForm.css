@@ -1,0 +1,11 @@
+.message-input-form {
+    display: flex;
+}
+
+.message-input {
+    width: 70%;
+}
+
+.send-button {
+    width: 30%;
+}

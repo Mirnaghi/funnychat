@@ -1,0 +1,19 @@
+.message {
+  width: max-content;
+  margin: 0 0.5em 1em .5em;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: right;
+}
+
+
+.message-left {
+    align-self: flex-end;
+}
+
+.message-right {
+    align-self: flex-start;
+}
