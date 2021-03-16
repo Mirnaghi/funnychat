@@ -18,8 +18,10 @@ header {
 }
 
 header > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   letter-spacing: .5em;
-  margin: .7em;
   width: 70%;
   align-text: center;
   color: var(--text-color);
