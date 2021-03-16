@@ -7,73 +7,47 @@ import db from './services/firebase.js';
 import firebase from 'firebase';
 
 function App() {
-  // logged in user
-  const [username, setUsername] = useState('');
+  /*
+    STATE VARIABLES
+  */
+  // create state for storing new user
 
-  // state for message input
-  const [messageInput, setMessageInput] = useState('');
 
-  // all messages
-  const [messages, setMessages] = useState([]);
+  // create state for storing message that user typed in
 
-  // get username
-  const handleUserName = (username) => {
-    setUsername(username);
-    console.log(username)
-  }
 
-  // sign in user with username
+  // create state for storing all messages we got from database (firestore)
 
-  // sign out user
-  const signOut = () => {
-    setUsername('');
-  }
 
-  // get text input from user
-  const handleChange = (e) => {
-    e.preventDefault();
-    setMessageInput(e.target.value);
-    console.log(e.target.value);
-  }
+  /*
+    METHODS
+  */
 
-  // send message
-  const sendMessage = (e) => {
-    e.preventDefault();
 
-    if(messageInput) {
-        db.collection('funnyMessages').add({
-          text: messageInput,
-          username: username,
-          date: firebase.firestore.FieldValue.serverTimestamp()
-        });
-    }
+  // create method for removing username from username state
 
-    // clear input field after sending message
-    e.target.form.message_input.value = "";
-    setMessageInput('');
-  }
 
-  // listener for data in database
-  useEffect(() => {
-    db.collection('funnyMessages')
-      .orderBy('date')
-      .onSnapshot(snapshot => {
-      setMessages(snapshot.docs.map(doc => doc.data()));
-    })
-  }, [])
+  // crete method for getting user message and store it in message state
+
+
+  // create method for sending message
+
+
+  // create component lifecycle method for retrieving messages from database and store in messages state
+
 
 
   return (
     <div className="App">
-    { !username ? <SignIn handleClick={handleUserName} /> :
+        <SignIn handleClick={ /* you should sign user in */ } />
       <div className="container">
         <header>
-          <h1>Welcome {username}</h1>
-          <button onClick={signOut}>EXIT CHAT</button>
+          <h1>Welcome {/* username in here */}</h1>
+          <button onClick={/* user should exit chat when clicked */}>EXIT CHAT</button>
         </header>
-        <MessageList username={username} messages={messages}/>
-        <MessageInputForm handleClick={sendMessage} handleChange={handleChange}/>
-      </div>}
+        <MessageList {/* pass username and messages as props */}/>
+        <MessageInputForm handleClick={/* send user`s message */} handleChange={/* get user message */}/>
+      </div>
     </div>
   );
 }

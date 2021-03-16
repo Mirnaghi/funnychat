@@ -1,7 +1,7 @@
 import React from 'react';
 import './Message.css';
 
-function Message({ text, user, youSent }) {
+function Message() {
 
     let messageAlign = youSent ? "message-right" : "message-left";
 
@@ -9,8 +9,10 @@ function Message({ text, user, youSent }) {
         <p className={`message ${messageAlign}`}
             style={{ backgroundColor: youSent ? '#b5179e' : '#f72585'}}
         >
-            {text}
-            <p className={`username ${youSent ? 'user-right' : 'user-left'}`}>{user}</p>
+            { /* show message content */ }
+            <p className={`username ${youSent ? 'user-right' : 'user-left'}`}>
+                {/* show sender`s name */}
+            </p>
         </p>);
 
 }

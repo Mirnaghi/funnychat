@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import './SignIn.css';
 
-function SignIn({ handleClick }) {
+function SignIn() {
 
-    const [nameInput, setNameInput] = useState('');
+    /*
+        STATE VARIABLES
+    */
+    // create state variable for storing username input
 
 
     return (
         <form className="signin__form">
            <h1>FUNNY CHAT</h1>
-            <input onChange={(e) => {setNameInput(e.target.value)}} placeholder="Enter name to join chat"></input>
-            <button onClick={(e) => {
-                e.preventDefault();
-                handleClick(nameInput);
-            }}>SUBMIT</button>
+            <input {/* get username and store in state */} placeholder="Enter name to join chat"></input>
+            <button { /* sign in user */ }>ENTER CHAT</button>
         </form>
     );
 }

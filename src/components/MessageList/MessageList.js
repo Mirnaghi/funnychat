@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './MessageList.css';
 import Message from '../Message/Message';
 
-function MessageList({ username, messages }) {
+function MessageList() {
     // ref to dummy div
     const messageEndDiv = useRef(null);
 
@@ -17,10 +17,9 @@ function MessageList({ username, messages }) {
 
     return (
             <div className="message-list">
-                {messages.map(msg => {
-                    console.log(msg);
-                    return <Message text={msg.text} user={msg.username} youSent={username === msg.username}/>;
-                })}
+                {
+                    /* show all messages to user */
+                }
                 <div ref={messageEndDiv}></div>
             </div>
         );
