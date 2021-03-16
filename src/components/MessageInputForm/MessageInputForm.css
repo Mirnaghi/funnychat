@@ -3,9 +3,11 @@
 }
 
 .message-input {
-    width: 70%;
+    width: 92%;
 }
 
 .send-button {
-    width: 30%;
+    width: 8%;
+    border-radius: 25px;
+    margin: 0 .5em;
 }

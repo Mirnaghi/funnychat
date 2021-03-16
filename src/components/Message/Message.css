@@ -1,6 +1,8 @@
+
 .message {
+  position: relative;
   width: max-content;
-  margin: 0 0.5em 1em .5em;
+  margin: 0.5em 0.5em 1em 0.5em;
   line-height: 24px;
   padding: 10px 20px;
   border-radius: 25px;
@@ -9,11 +11,22 @@
   text-align: right;
 }
 
+.username {
+    position: absolute;
+    top: -35px;
+    left: 10px;
+    color: white;
+    font-size: .8em;
+}
 
-.message-left {
-    align-self: flex-end;
+.user-right {
+    right: 10px;
 }
 
 .message-right {
+    align-self: flex-end;
+}
+
+.message-left {
     align-self: flex-start;
 }
